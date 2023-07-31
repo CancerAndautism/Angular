@@ -115,8 +115,6 @@ export class AppComponent {
   updateLogin(){
     var tempUser = localStorage.getItem("name")
     var tempRole = localStorage.getItem("role")
-    console.log(tempUser)
-    console.log(tempRole)
     if (tempUser != null){
       this.user = tempUser
     }
@@ -129,8 +127,6 @@ export class AppComponent {
     else {
       this.role = ""
     }
-    console.log(this.user)
-    console.log(this.role)
     if (this.role == "user") {
       this.userRights = true
     }
