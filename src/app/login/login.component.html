@@ -1,0 +1,21 @@
+<h3 mat-dialog-title style="text-align: center;" >Login</h3>
+
+<mat-form-field>
+    <mat-label style="text-align: center;">Username</mat-label>
+    <input matInput type="text" placeholder="Username" [formControl] = validator1  [value] = Username required >
+    <mat-error *ngIf="validator2.invalid">{{getErrorMessage(validator1)}}</mat-error>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label style="text-align: center;">Password</mat-label>
+    <input matInput type="text" placeholder="Password"[formControl] = validator2 [value] = Password required [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click) = "hide = !hide">{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+    <mat-error *ngIf="validator2.invalid">{{getErrorMessage(validator2)}}</mat-error>
+</mat-form-field>
+
+<mat-error *ngIf="error">The username or password is incorrect. Please try again.</mat-error>
+
+<div>
+<button mat-button (click) = "submit($event)" [disabled]="validator1.invalid||validator2.invalid">Submit</button>
+<button mat-button  (click) = "onNoClick()">Cancel</button>
+</div>

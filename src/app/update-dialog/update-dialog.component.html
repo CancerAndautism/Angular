@@ -1,0 +1,95 @@
+<div>
+
+    <h3 mat-dialog-title style="text-align: center;" >The Folio Number below is new and will be added to the database:</h3>
+    
+  
+    <mat-table [dataSource]="dataSource1" class="mat-elevation-z8" >
+  
+     
+      <ng-container matColumnDef="Folio_No">
+        <th mat-header-cell *matHeaderCellDef> Folio No </th>
+        <td mat-cell *matCellDef="let row"> {{row.Folio_No}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let row"> {{row.Description}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Unit">
+        <th mat-header-cell *matHeaderCellDef> Unit </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Unit}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Stock_Qty">
+        <th mat-header-cell *matHeaderCellDef> Stock Qty </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Stock_Qty}} </td>
+      </ng-container>
+      <ng-container matColumnDef="WAC">
+        <th mat-header-cell *matHeaderCellDef> WAC </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.WAC}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Bin_Location">
+        <th mat-header-cell *matHeaderCellDef> Bin Location </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Bin_Location}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Remarks}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Shelf_life_item">
+        <th mat-header-cell *matHeaderCellDef> Shelf-life item </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Shelf_life_item}} </td>
+      </ng-container>
+    
+     
+    
+      <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+    </mat-table>
+    <mat-paginator #firstPaginator [length] = "length1" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" ></mat-paginator>
+    <br>
+    <h3 mat-dialog-title style="text-align: center;" >The Folio Number below already exists and the entries will be updated:</h3>
+    <mat-table [dataSource]="dataSource2" class="mat-elevation-z8" >
+  
+     
+      <ng-container matColumnDef="Folio_No">
+        <th mat-header-cell *matHeaderCellDef> Folio No </th>
+        <td mat-cell *matCellDef="let row"> {{row.Folio_No}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let row"> {{row.Description}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Unit">
+        <th mat-header-cell *matHeaderCellDef> Unit </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Unit}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Stock_Qty">
+        <th mat-header-cell *matHeaderCellDef> Stock Qty </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Stock_Qty}} </td>
+      </ng-container>
+      <ng-container matColumnDef="WAC">
+        <th mat-header-cell *matHeaderCellDef> WAC </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.WAC}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Bin_Location">
+        <th mat-header-cell *matHeaderCellDef> Bin Location </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Bin_Location}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Remarks}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Shelf_life_item">
+        <th mat-header-cell *matHeaderCellDef> Shelf-life item </th>
+        <td mat-cell *matCellDef="let newData"> {{newData.Shelf_life_item}} </td>
+      </ng-container>
+    
+     
+    
+      <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+    </mat-table>
+    <mat-paginator #secondPaginator [length] = "length2" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" ></mat-paginator>
+  </div>
+
+  <button mat-button  (click) = submit($event)>Submit</button>
+  <button mat-button  (click) = onNoClick()>Cancel</button>

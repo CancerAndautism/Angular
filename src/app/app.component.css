@@ -1,0 +1,13 @@
+.example-fill-remaining-space {
+
+    flex: 1 1 auto;
+  }
+.custom-dialog-container {
+    overflow-y: hidden !important;
+}
+.filter {
+  display: block;
+}
+.header {
+  padding: 5px;
+}

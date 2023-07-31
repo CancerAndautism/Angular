@@ -1,0 +1,7 @@
+<h3 mat-dialog-title style="text-align: center;" >Duplicated Entry</h3>
+<mat-dialog-content style="text-align: center;">The database already contains an entry with Folio Number: {{data.Folio_No}}
+<br>
+Do you want to edit the entry instead?
+</mat-dialog-content>
+<button mat-button (click)="edit()">Edit</button>
+<button mat-button (click) = "onNoClick()" >Cancel</button>
