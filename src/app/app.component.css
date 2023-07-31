@@ -11,3 +11,67 @@
 .header {
   padding: 5px;
 }
+.trial {
+  height: 70px;
+}
+.form {
+  margin-top: 10px;
+}
+.example-form-fields {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.table {
+  margin-top: -10px;
+}
+.mat-column-Folio_No{
+  min-width: 10%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Description{
+  min-width: 20%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Unit{
+  min-width: 5%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Stock_Qty{
+  min-width: 5%;
+  justify-content: right;
+  border-right: 1px solid currentColor;
+}
+.mat-column-WAC{
+  min-width: 10%;
+  justify-content: right;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Bin_Location{
+  min-width: 10%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Remarks{
+  min-width: 20%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Shelf_life_item{
+  min-width: 5%;
+  justify-content: left;
+  border-right: 1px solid currentColor;
+}
+.mat-column-Actions{
+  min-width: 10%;
+  justify-content: center;
+}
+.mat-select-trigger{
+  font-size: 12px;
+}
+input::placeholder {
+  font-size: 12px;
+}

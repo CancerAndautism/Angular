@@ -37,35 +37,28 @@
   </button>
 </mat-menu>
 </mat-toolbar>
-
-
-  <div>
-  <br>
+  <div class="example-form-fields">
   <mat-form-field color="accent">
-    <mat-select placeholder="Select display column" [formControl]="column" multiple >
-      <mat-select-trigger>
+    <mat-select [formControl]="column" multiple >
+      <mat-select-trigger class="mat-select-trigger">
         Select displayed columns
       </mat-select-trigger>
       <mat-option *ngFor="let column of Columns" [value]="column" >{{column}}</mat-option>
     </mat-select>
   </mat-form-field>
-
+  &nbsp;
   <mat-form-field>
     <mat-label style="text-align: center;">Description </mat-label>
     <input matInput type="text" placeholder="Use keywords to search" [formControl] = "Filter1">
   </mat-form-field>
+  &nbsp;
   <mat-form-field>
     <mat-label style="text-align: center;">Remarks   </mat-label>
     <input matInput type="text" placeholder="Use keywords to search" [formControl] = "Filter2">
   </mat-form-field>
-</div>
- 
-
-
-
+  </div>
+  <div class="table">
   <mat-table [dataSource]="dataSource1" matSort>
-
-   
     <ng-container matColumnDef="Folio_No">
       <mat-header-cell *matHeaderCellDef mat-sort-header > Folio No </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.Folio_No}} </mat-cell>
@@ -109,12 +102,14 @@
         </button>
       </mat-cell>
     </ng-container>
+    
   
    
   
     <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayColumns;"></mat-row>
   </mat-table>
+</div>
   <mat-paginator #firstPaginator [length] = "length1" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" ></mat-paginator>
 
   

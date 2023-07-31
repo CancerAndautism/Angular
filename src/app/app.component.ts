@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { HttpClient, HttpEvent, HttpParams, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { HTTPService } from './httpservice';
 import {ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -99,10 +99,10 @@ export class AppComponent {
   }
   ngAfterViewInit(){
     this.dataSource1.sort = this.sort
-    this.Filter1.valueChanges.subscribe(result =>{
+    this.Filter1.valueChanges.pipe(debounceTime(400), distinctUntilChanged()).subscribe(result =>{
       this.updateTable()
     })
-    this.Filter2.valueChanges.subscribe(result =>{
+    this.Filter2.valueChanges.pipe(debounceTime(400), distinctUntilChanged()).subscribe(result =>{
       this.updateTable()
     })
   }
