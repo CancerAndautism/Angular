@@ -64,7 +64,7 @@ export class AppComponent {
   constructor(private httpService: HTTPService, public dialog: MatDialog) {
     
   }
-  title = 'excel';
+  title = 'ASMG Inventory';
 
   length1 = 0;
   length2 = 0;
