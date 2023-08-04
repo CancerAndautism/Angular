@@ -21,6 +21,7 @@
     <mat-error *ngIf="validator4.invalid">{{getErrorMessage(validator4)}}</mat-error>
 </mat-form-field>
 </div>
+<br *ngIf="validator4.invalid">
 <div>
 <mat-form-field>
     <mat-label style="text-align: center;">WAC</mat-label>
@@ -43,7 +44,7 @@
     <mat-error *ngIf="validator8.invalid">{{getErrorMessage(validator8)}}</mat-error>
 </mat-form-field>
 </div>
-
+<br *ngIf="validator5.invalid">
 <button mat-button  (click) = submit($event) [disabled]="validator2.invalid||validator3.invalid||validator4.invalid||validator5.invalid||validator6.invalid||validator7.invalid||validator8.invalid">Submit</button>
 <button mat-button  (click) = onNoClick()>Cancel</button>
 
