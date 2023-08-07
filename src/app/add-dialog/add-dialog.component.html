@@ -1,5 +1,6 @@
 <h3 mat-dialog-title style="text-align: center;" >Add Entry</h3>
 
+<div>
 <mat-form-field>
     <mat-label style="text-align: center;">Folio Number</mat-label>
     <input matInput type="text" placeholder="Folio Number" [formControl] = validator1  [value] = Folio_No required >
@@ -20,6 +21,8 @@
     <input matInput type="number" placeholder="Stock Quantity" [value] = Stock_Qty required [formControl] = validator4>
     <mat-error *ngIf="validator4.invalid">{{getErrorMessage(validator4)}}</mat-error>
 </mat-form-field>
+</div>
+<br *ngIf="validator4.invalid">
 <mat-form-field>
     <mat-label style="text-align: center;">WAC</mat-label>
     <input matInput type="number" placeholder="WAC" [value] = WAC required [formControl] = validator5>
@@ -42,6 +45,7 @@
 </mat-form-field>
 
 <div>
+<br *ngIf="validator5.invalid">
 <button mat-button  (click) = submit($event) [disabled]="validator1.invalid||validator2.invalid||validator3.invalid||validator4.invalid||validator5.invalid||validator6.invalid||validator7.invalid||validator8.invalid">Submit</button>
 <button mat-button  (click) = onNoClick()>Cancel</button>
 </div>

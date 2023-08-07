@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { UpdateDialogComponent } from '../update-dialog/update-dialog.component';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HTTPService } from '../httpservice';
-import { CloseDialogComponent } from '../close-dialog/close-dialog.component';
+import { CloseDialogDeleteComponent } from '../close-dialog-delete/close-dialog-delete.component';
 
 @Component({
   selector: 'app-delete-dialog',
@@ -17,7 +17,7 @@ export class DeleteDialogComponent {
 
     });
     console.log(this.data)
-    const dialogRef = this.dialog.open(CloseDialogComponent, {width: '500px', height: '100px'})
+    const dialogRef = this.dialog.open(CloseDialogDeleteComponent, {width: '500px', height: '100px'})
     this.dialogRef.close();
   }
 

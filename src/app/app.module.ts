@@ -27,6 +27,7 @@ import { DuplicatedDialogComponent } from './duplicated-dialog/duplicated-dialog
 import { UnacceptedExcelComponent } from './unaccepted-excel/unaccepted-excel.component';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './login/login.component';
+import { CloseDialogDeleteComponent } from './close-dialog-delete/close-dialog-delete.component';
 
 
 
@@ -45,7 +46,8 @@ import { LoginComponent } from './login/login.component';
     AddDialogComponent,
     DuplicatedDialogComponent,
     UnacceptedExcelComponent,
-    LoginComponent
+    LoginComponent,
+    CloseDialogDeleteComponent
     
   ],
   imports: [
