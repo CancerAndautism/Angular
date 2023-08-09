@@ -313,7 +313,7 @@ export class AppComponent {
 
       }
       this.newData = tempData
-      const dialogRef = this.dialog.open(UpdateDialogComponent, {data: this.newData,panelClass: 'custom-dialog-container'})
+      const dialogRef = this.dialog.open(UpdateDialogComponent, {data: this.newData,panelClass: 'custom-dialog-container', width: '1000px', height: '700px'})
       dialogRef.afterClosed().subscribe(result =>{
         this.updateTable()
       })
